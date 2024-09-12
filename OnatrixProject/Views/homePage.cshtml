@@ -15,6 +15,23 @@
     {
         selection = content.ChildrenOfType("serviceItemTemplate").Where(x => x.IsVisible());
     }
+
+    var storyImage = Model?.Value<IPublishedContent>("storyImage")?.Url() ?? "";
+
+    var successImage = Model?.Value<IPublishedContent>("successImage")?.Url() ?? "";
+
+    var recentBoxOneImg = Model?.Value<IPublishedContent>("recentBoxOneImg")?.Url() ?? "";
+    var recentBoxTwoImage = Model?.Value<IPublishedContent>("recentBoxTwoImage")?.Url() ?? "";
+    var recentBoxThreeImg = Model?.Value<IPublishedContent>("recentBoxThreeImg")?.Url() ?? "";
+    var recentBoxFourImg = Model?.Value<IPublishedContent>("recentBoxFourImg")?.Url() ?? "";
+
+    var companyImageOne = Model?.Value<IPublishedContent>("companyImageOne")?.Url() ?? "";
+    var companyImageTwo = Model?.Value<IPublishedContent>("companyImageTwo")?.Url() ?? "";
+    var companyImageThree = Model?.Value<IPublishedContent>("companyImageThree")?.Url() ?? "";
+    var companyImageFour = Model?.Value<IPublishedContent>("companyImageFour")?.Url() ?? "";
+    var companyImageFive = Model?.Value<IPublishedContent>("companyImageFive")?.Url() ?? "";
+    var companyImageSix = Model?.Value<IPublishedContent>("companyImageSix")?.Url() ?? "";
+        
 }
 
 <section id="hero-section">
@@ -68,4 +85,90 @@
 			}
 		</div>
 	</div>
+</section>
+
+<section id="story-section">
+    <div class="container">
+        <div class="content">
+            <h2>@Model.Value("storyHeadline")</h2>
+            <p>@Model.Value("storyText")</p>
+            <a href="@Model.Value("storyButtonUrl")" class="btn-primary">@Model.Value("storyButtonText")</a>
+            <img id="group-img" src="@storyImage">
+        </div>
+    </div>
+</section>
+
+<section id="success-section" class="bg-primary">
+    <div class="container">
+        <div class="content">
+            <h6>@Model.Value("successSectionTitle")</h6>
+            <h2>@Model.Value("successHeadline")</h2>
+            <div class="numbers">
+                <div>
+                    <h1>@Model.Value("successBoxOneNumber")</h1>
+                    <p>@Model.Value("successBoxOneText")</p>
+                </div>
+                <div>
+                    <h1>@Model.Value("successBoxTwoNumber")</h1>
+                    <p>@Model.Value("successBoxTwoText")</p>
+                </div>
+                <div>
+                    <h1>@Model.Value("successBoxThreeNumber")</h1>
+                    <p>@Model.Value("successBoxThreeText")</p>
+                </div>
+            </div>
+            <img id="success-image" src="@successImage" alt="">
+        </div>
+    </div>
+</section>
+
+<section id="recent-section">
+    <div class="container">
+        <div class="headline">
+            <h6>@Model.Value("recentSectionTitle")</h6>
+            <h2>@Model.Value("recentHeadline")</h2>
+        </div>
+    </div>
+
+    <div class="recent-articles">
+        <div class="recent-box">
+            <img src="@recentBoxOneImg" alt="">
+            <div class="recent-text">
+                <h5>@Model.Value("recentBoxOneH5")</h5>
+                <p>@Model.Value("recentBoxOneText")</p>
+            </div>
+        </div>
+        <div class="recent-box">
+            <img src="@recentBoxTwoImage" alt="">
+            <div class="recent-text">
+                <h5>@Model.Value("recentBoxTwoh5")</h5>
+                <p>@Model.Value("recentBoxTwoText")</p>
+            </div>
+        </div>
+        <div class="recent-box">
+            <img src="@recentBoxThreeImg" alt="">
+            <div class="recent-text">
+                <h5>@Model.Value("recentBoxThreeH5")</h5>
+                <p>@Model.Value("recentBoxThreeText")</p>
+            </div>
+        </div>
+        <div class="recent-box">
+            <img src="@recentBoxFourImg" alt="">
+            <div class="recent-text">
+                <h5>@Model.Value("recentBoxFourH5")</h5>
+                <p>@Model.Value("recentBoxFourText")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="company-section">
+    <div class="container">
+        <img src="@companyImageOne" alt="">
+        <img src="@companyImageTwo" alt="">
+        <img src="@companyImageThree" alt="">
+        <img src="@companyImageFour" alt="">
+        <img src="@companyImageFive" alt="">
+        <img src="@companyImageSix" alt="">
+    </div>
 </section>

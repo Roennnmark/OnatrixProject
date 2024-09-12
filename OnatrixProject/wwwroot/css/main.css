@@ -408,19 +408,44 @@ footer .container {
 }
 #let-us-know-next-project .container .guy-special-img #guy {
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 #let-us-know-next-project .container .guy-special-img #corners {
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   bottom: -223px;
 }
 #let-us-know-next-project .container .guy-special-img #dots {
   position: absolute;
-  z-index: -2;
+  z-index: 2;
   left: 340px;
 }
 #let-us-know-next-project .container .information {
   padding-top: 100px;
   padding-left: 60px;
+}
+
+#single-page-service {
+  padding-top: 60px;
+}
+#single-page-service .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#single-page-service .container .left-bar {
+  padding-right: 45px;
+}
+#single-page-service .container .left-bar .left-bar-box {
+  background-color: #4F5955;
+  padding: 30px;
+}
+#single-page-service .container .left-bar .left-bar-box h5 {
+  color: #f2EDDC;
+}
+#single-page-service .container .left-bar .left-bar-box p {
+  color: #FFFFFF;
+}
+#single-page-service .container .right-bar {
+  border-left: 1px solid #ECECEC;
+  padding-left: 45px;
 }
