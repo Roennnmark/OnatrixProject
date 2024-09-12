@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+	var ceoImage = Model?.Value<IPublishedContent>("ceoSectionImg")?.Url() ?? "";
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+<section id="first-section">
+    <div class="container">
+        <div class="left-side">
+            <img src="@ceoImage" alt="">
+            <p>@Model.Value("ceoSectionCeo")</p>
+        </div>
+        <div class="right-side">
+            <p id="big-text">@Model.Value("ceoSectionQuote")</p>
+            <p>@Model.Value("ceoSectionText")</p>
+            <p>@Model.Value("ceoSectionText2")</p>
+            <p>@Model.Value("ceoSectionText3")</p>
+            <p>@Model.Value("ceoSectionText4")</p>
+            <p>@Model.Value("ceoSectionText5")</p>
+            <p>@Model.Value("ceoSectionText6")</p>
+            <p>@Model.Value("ceoSectionText7")</p>
+        </div>
+    </div>
+</section>

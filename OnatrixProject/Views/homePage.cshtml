@@ -1,0 +1,71 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+	var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+
+	var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+
+	var content = Umbraco.Content(Guid.Parse("115b1f33-e1df-4605-b675-84da3d53009a"));
+    var selection = Enumerable.Empty<IPublishedContent>();
+    
+    if (content != null)
+    {
+        selection = content.ChildrenOfType("serviceItemTemplate").Where(x => x.IsVisible());
+    }
+}
+
+<section id="hero-section">
+	<img src="@backgroundImage">
+	<div class="container">
+		<div class="left-content">
+			<h1>@Model?.Value("heroHeadline")</h1>
+			<p>@Model?.Value("heroText")</p>
+			<a href="@Model?.Value("heroButtonUrl")" class="btn-primary">@Model?.Value("heroButtonText")</a>
+		</div>
+		<div class="right-content">
+
+		</div>
+	</div>
+</section>
+
+<section id="about-section">
+	<div class="container">
+		<div class="left-side">
+			<h6>@Model.Value("aboutSectionTitle")</h6>
+			<h2>@Model.Value("aboutHeadline")</h2>
+			<p>@Model.Value("aboutQuote")</p>
+			<p>@Model.Value("aboutText")</p>
+			<img src="@signatureImage">
+			<p>@Model.Value("aboutSignature")</p>
+		</div>
+		<div class="right-side">
+		</div>
+	</div>
+</section>
+
+<section id="services-section" class="bg-gray">
+	<div class="container">
+		<div class="headline">
+			<h6>@Model.Value("servicesSectionTitle")</h6>
+			<h2>@Model.Value("servicesSectionHeadline")</h2>
+		</div>
+
+		<div class="articles">
+			@foreach (var item in selection) {
+				var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+				var preamble = item?.Value<string>("preamble") ?? "";
+
+				<a href="@item.Url()">
+					<div class="box bg-light">
+						<h5>@item.Name</h5>
+						<img src="@image" alt="@item.Name">
+						<p>@preamble</p>
+					</div>
+				</a>
+			}
+		</div>
+	</div>
+</section>
