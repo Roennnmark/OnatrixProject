@@ -6,6 +6,19 @@
     ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
 	var ceoImage = Model?.Value<IPublishedContent>("ceoSectionImg")?.Url() ?? "";
+
+    var nextProjectGuyImg = Model?.Value<IPublishedContent>("nextProjectGuyImg")?.Url() ?? "";
+
+    var reviewGuyImage = Model?.Value<IPublishedContent>("reviewGuyImage")?.Url() ?? "";
+    var reviewStarImg = Model?.Value<IPublishedContent>("reviewStarImg")?.Url() ?? "";
+
+    var workersWorkerOneImg = Model?.Value<IPublishedContent>("workersWorkerOneImg")?.Url() ?? "";
+    var workersWorkerTwoImg = Model?.Value<IPublishedContent>("workersWorkerTwoImg")?.Url() ?? "";
+    var workersWorkerThreeImg = Model?.Value<IPublishedContent>("workersWorkerThreeImg")?.Url() ?? "";
+    var workersWorkerFourImg = Model?.Value<IPublishedContent>("workersWorkerFourImg")?.Url() ?? "";
+    var workersWorkerFiveImg = Model?.Value<IPublishedContent>("workersWorkerFiveImg")?.Url() ?? "";
+    var workersWorkerSixImg = Model?.Value<IPublishedContent>("workersWorkerSixImg")?.Url() ?? "";
+    var workersWorkerSevenImg = Model?.Value<IPublishedContent>("workersWorkerSevenImg")?.Url() ?? "";
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
@@ -31,3 +44,81 @@
         </div>
     </div>
 </section>
+
+<section id="second-section">
+    <div class="container">
+        <div class="left-side">
+            <h6>@Model.Value("reviewSectionTitle")</h6>
+            <h2>@Model.Value("reviewHeadline")</h2>
+            <p>@Model.Value("reviewText")</p>
+            <img src="@reviewStarImg" alt="">
+            <p>@Model.Value("reviewName")</p>
+            <p>@Model.Value("reviewBank")</p>
+        </div>
+    </div>
+    <img id="boy-img" src="@reviewGuyImage" alt="">
+</section>
+
+<section id="third-section">
+    <div class="container">
+        <div class="headline">
+            <h6>@Model.Value("workersSectionTitle")</h6>
+            <h2>@Model.Value("workersHeadline")</h2>
+        </div>
+        <div class="first-three">
+            <div class="box">
+                <img src="@workersWorkerOneImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerOneName")</h4>
+                    <p>@Model.Value("workersWorkerOneRole")</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="@workersWorkerTwoImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerTwoName")</h4>
+                    <p>@Model.Value("workersWorkerTwoRole")</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="@workersWorkerThreeImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerThreeName")</h4>
+                    <p>@Model.Value("workersWorkerThreeRole")</p>
+                </div>
+            </div>
+        </div>
+        <div class="second-four">
+            <div class="box">
+                <img src="@workersWorkerFourImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerFourName")</h4>
+                    <p>@Model.Value("workersWorkerFourRole")</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="@workersWorkerFiveImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerFiveName")</h4>
+                    <p>@Model.Value("workersWorkerFiveRole")</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="@workersWorkerSixImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerSixName")</h4>
+                    <p>@Model.Value("workersWorkerSixRole")</p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="@workersWorkerSevenImg" alt="">
+                <div class="text">
+                    <h4>@Model.Value("workersWorkerSevenName")</h4>
+                    <p>@Model.Value("workersWorkerSevenRole")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("partials/static/nextprojectsection.cshtml")

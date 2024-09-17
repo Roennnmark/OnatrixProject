@@ -1,8 +1,20 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 @{
 	Layout = "mainLayout.cshtml";
     ViewBag.Title = Model.Name;
+
+    var manImage = Model?.Value<IPublishedContent>("singleServiceImage")?.Url() ?? "";
+
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var officePhone = settings?.Value<string>("officePhone") ?? "";
+    var officeEmailAddress = settings?.Value<string>("officeEmailAddress") ?? "";
+
+    var howCanWeHelpImg = Model?.Value<IPublishedContent>("howCanWeHelpImg")?.Url() ?? "";
+}
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
@@ -14,6 +26,7 @@
     <div class="container">
         <div class="left-bar">
             <h5>About us</h5>
+            <img src="@howCanWeHelpImg">
             <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
             <div class="left-bar-box">
                 <h5>How can we help you?</h5>
@@ -26,3 +39,5 @@
         </div>
     </div>
 </section>
+
+@await Html.PartialAsync("partials/static/nextprojectsection.cshtml")

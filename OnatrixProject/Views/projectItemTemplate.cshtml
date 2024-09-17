@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Name;
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+<section id="single-project-page">
+    <div class="container">
+        <div class="left-side-content">
+            @Model.Value("projectItemContent")
+        </div>
+        <div class="right-side-content">
+            <h5>Tags</h5>
+            <div class="tag-buttons">
+                <a href="" class="btn-light">Report</a>
+                <a href="" class="btn-light">Busines plans</a>
+                <a href="" class="btn-light">Insights</a>
+                <a href="" class="btn-light">Business</a>
+                <a href="" class="btn-light">App</a>
+                <a href="" class="btn-light">Project</a>
+                <a href="" class="btn-light">Finance</a>
+                <a href="" class="btn-light">Pricing</a>
+            </div>
+            <div class="right-side-box">
+                <h5>How can we help you?</h5>
+                <p>online support 24/7, we are here to help you</p>
+                <input type="email" placeholder="E-mail address">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@await Html.PartialAsync("partials/static/nextprojectsection.cshtml")

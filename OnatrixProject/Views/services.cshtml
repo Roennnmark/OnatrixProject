@@ -40,7 +40,7 @@
 				var preamble = item?.Value<string>("preamble") ?? "";
 
 				<a href="@item.Url()">
-					<div class="box bg-light">
+					<div class="box bg-light" style="border: 1px solid #F7F7F7;">
 						<h5>@item.Name</h5>
 						<img src="@image" alt="@item.Name">
 						<p>@preamble</p>
@@ -51,19 +51,4 @@
 	</div>
 </section>
 
-<section id="let-us-know-next-project" class="bg-gray">
-    <div class="container">
-        <div class="guy-special-img">
-            <img id="guy" src="@manImage" alt="">
-        </div>
-        <div class="information">
-            <h2>@Model.Value("servicesHeadline")</h2>
-            <h6><i class="fa-solid fa-location-dot"></i>@Model.Value("servicesOffice")</h6>
-            <p>@officeLocation</p>
-            <h6><i class="fa-solid fa-phone"></i>@Model.Value("servicesPhone")</h6>
-            <p>@officePhone</p>
-            <h6><i class="fa-regular fa-envelope"></i>@Model.Value("servicesEmail")</h6>
-            <p>@officeEmailAddress</p>
-        </div>
-    </div>
-</section>
+@await Html.PartialAsync("partials/static/nextprojectsection.cshtml")

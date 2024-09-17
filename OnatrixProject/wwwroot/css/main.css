@@ -178,6 +178,7 @@ header .container #navbar .nav-menu a {
   margin-left: 40px;
   color: #4F5955;
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 header .container #navbar .nav-menu a.active {
@@ -227,6 +228,9 @@ header .container .search button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+}
+#services-section .container .articles .box {
+  border-color: 1px solid #F7F7F7;
 }
 #services-section .container .articles .box h5 {
   padding: 20px;
@@ -448,4 +452,156 @@ footer .container {
 #single-page-service .container .right-bar {
   border-left: 1px solid #ECECEC;
   padding-left: 45px;
+}
+
+#page-bar .container .breadcrumb {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+#page-bar .container .breadcrumb a {
+  color: #4F5955;
+}
+#page-bar .container .breadcrumb .active {
+  color: #D9C3A9;
+}
+
+#projects-page {
+  padding-top: 50px;
+}
+#projects-page .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#projects-page .container .left-side-content {
+  padding-right: 45px;
+}
+#projects-page .container .left-side-content .project-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #ECECEC;
+}
+#projects-page .container .left-side-content .project-list .project-text h6 {
+  color: #4F5955;
+}
+#projects-page .container .right-side-content {
+  padding-left: 45px;
+  border-left: 1px solid #ECECEC;
+}
+#projects-page .container .right-side-content .tag-buttons {
+  padding-bottom: 30px;
+  padding-right: 50px;
+}
+#projects-page .container .right-side-content .tag-buttons .btn-light {
+  cursor: pointer;
+  border-radius: 25px;
+  border-color: #ECECEC;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 10px 20px;
+}
+#projects-page .container .right-side-content .right-side-box {
+  background-color: #4F5955;
+  padding: 30px;
+}
+#projects-page .container .right-side-content .right-side-box h5 {
+  color: #f2EDDC;
+}
+#projects-page .container .right-side-content .right-side-box p {
+  color: #FFFFFF;
+}
+#projects-page .container .right-side-content .right-side-box input {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #F7F7F7;
+  padding: 15px 40px;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none !important;
+}
+#single-project-page {
+  padding-top: 50px;
+}
+#single-project-page .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#single-project-page .container .left-side-content {
+  padding-right: 45px;
+}
+#single-project-page .container .right-side-content {
+  padding-left: 45px;
+  border-left: 1px solid #ECECEC;
+}
+#single-project-page .container .right-side-content .tag-buttons {
+  padding-bottom: 30px;
+  padding-right: 50px;
+}
+#single-project-page .container .right-side-content .tag-buttons .btn-light {
+  cursor: pointer;
+  border-radius: 25px;
+  border-color: #ECECEC;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 10px 20px;
+}
+#single-project-page .container .right-side-content .right-side-box {
+  background-color: #4F5955;
+  padding: 30px;
+}
+#single-project-page .container .right-side-content .right-side-box h5 {
+  color: #f2EDDC;
+}
+#single-project-page .container .right-side-content .right-side-box p {
+  color: #FFFFFF;
+}
+
+#contact-form #contact-map {
+  position: absolute;
+  z-index: -2;
+}
+#contact-form .container {
+  position: relative;
+}
+#contact-form .container .content {
+  background-color: #FFFFFF;
+  padding: 100px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 300px;
+  border: 1px solid #F7F7F7;
+}
+#contact-form .container .content .headline-texts {
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+#contact-form .container .content .inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+#contact-form .container .content .inputs input {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #F7F7F7;
+  padding: 15px 40px;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+#contact-form .container .content .btn-primary {
+  margin-top: 30px;
+  margin-left: 415px;
 }

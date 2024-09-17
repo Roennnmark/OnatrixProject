@@ -20,11 +20,11 @@
             @foreach (var item in selection.OrderBy(x => x.Level))
             {
                 var displayName = isFirstItem ? homePageDisplayName : item.Name;
-                <li><a href="@item.Url(PublishedUrlProvider)">@displayName</a></li>
+                <li><a href="@item.Url(PublishedUrlProvider)">@displayName ></a></li>
                 isFirstItem = false;
             }
 
-            <li class="active">@Model.Name</li>
+            <li class="active" style="color: #D9C3A9;">@Model.Name</li>
         </ul>
         }
     </div>

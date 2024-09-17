@@ -3,9 +3,64 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+	var content = Umbraco.Content(Guid.Parse("20188231-add6-4d55-837d-17a813814412"));
+	var selection = Enumerable.Empty<IPublishedContent>();
+
+	if (content != null)
+    {
+        selection = content.ChildrenOfType("projectItemTemplate").Where(x => x.IsVisible());
+    }
+    
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
 {
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
 }
+
+<section id="projects-page">
+	<div class="container">
+		<div class="left-side-content">
+			<div class="project-list">
+				@foreach (var item in selection) {
+				var image = item?.Value<IPublishedContent>("ProjectItemImg")?.Url() ?? "";
+				var date = item?.Value<string>("ProjectItemDate") ?? "";
+				var text = item?.Value<string>("ProjectItemText") ?? "";
+				var alinktext = item?.Value<string>("ProjectItemAlinkText") ?? "";
+
+				<div class="project-img">
+					<img src="@image" alt="">
+				</div>
+				<div class="project-text">
+					<h5>@item.Name</h5>
+					<p>@date</p>
+					<p>@text</p>
+					<a href="@item.Url()"><h6>@alinktext </h6></a>
+				</div>
+			}
+			</div>
+		</div>
+		<div class="right-side-content">
+			<h5>Tags</h5>
+			<div class="tag-buttons">
+				<a href="" class="btn-light">Report</a>
+				<a href="" class="btn-light">Busines plans</a>
+				<a href="" class="btn-light">Insights</a>
+				<a href="" class="btn-light">Business</a>
+				<a href="" class="btn-light">App</a>
+				<a href="" class="btn-light">Project</a>
+				<a href="" class="btn-light">Finance</a>
+				<a href="" class="btn-light">Pricing</a>
+			</div>
+			<div class="right-side-box">
+				<h5>How can we help you?</h5>
+				<p>online support 24/7, we are here to help you</p>
+				<input type="email" placeholder="E-mail address">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+@await Html.PartialAsync("partials/static/nextprojectsection.cshtml")
