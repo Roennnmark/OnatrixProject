@@ -3,6 +3,15 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var contactMapImage = Model?.Value<IPublishedContent>("contactMapImage")?.Url() ?? "";
+
+    var contactCompany1 = Model?.Value<IPublishedContent>("contactCompany1")?.Url() ?? "";
+    var contactCompany2 = Model?.Value<IPublishedContent>("contactCompany2")?.Url() ?? "";
+    var contactCompany3 = Model?.Value<IPublishedContent>("contactCompany3")?.Url() ?? "";
+    var contactCompany4 = Model?.Value<IPublishedContent>("contactCompany4")?.Url() ?? "";
+    var contactCompany5 = Model?.Value<IPublishedContent>("contactCompany5")?.Url() ?? "";
+    var contactCompany6 = Model?.Value<IPublishedContent>("contactCompany6")?.Url() ?? "";
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
@@ -11,3 +20,37 @@
 }
 
 @await Html.PartialAsync("partials/static/nextprojectsection.cshtml")
+
+<form onsubmit="" novalidate>
+    <section id="contact-form">
+        <img id="contact-map" src="@contactMapImage">
+        <div class="container">
+            <div class="content">
+                <div class="headline-texts">   
+                    <h6>REQUEST A CALL BACK</h6>
+                    <h2>Let us know about your next project</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+                </div>
+
+                <div class="inputs">
+                    <input type="name" placeholder="Name">
+                    <input type="phone" placeholder="Phone">
+                    <input type="email" placeholder="E-mail address">
+                    <input type="choose" placeholder="Financial consulting">
+                </div>
+                <a class="btn-primary">Submit</a>
+            </div>
+        </div>
+    </section>
+</form>
+
+<section id="company-section">
+    <div class="container">
+        <img src="@contactCompany1" alt="">
+        <img src="@contactCompany2" alt="">
+        <img src="@contactCompany3" alt="">
+        <img src="@contactCompany4" alt="">
+        <img src="@contactCompany5" alt="">
+        <img src="@contactCompany6" alt="">
+    </div>
+</section>

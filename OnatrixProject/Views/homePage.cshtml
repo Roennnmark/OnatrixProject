@@ -17,8 +17,11 @@
     }
 
     var storyImage = Model?.Value<IPublishedContent>("storyImage")?.Url() ?? "";
+    var storyBackgroundDotImage = Model?.Value<IPublishedContent>("storyBackgroundDotImage")?.Url() ?? "";
 
     var successImage = Model?.Value<IPublishedContent>("successImage")?.Url() ?? "";
+    var successDotbackgroundImg = Model?.Value<IPublishedContent>("successDotbackgroundImg")?.Url() ?? "";
+
 
     var recentBoxOneImg = Model?.Value<IPublishedContent>("recentBoxOneImg")?.Url() ?? "";
     var recentBoxTwoImage = Model?.Value<IPublishedContent>("recentBoxTwoImage")?.Url() ?? "";
@@ -59,6 +62,19 @@
 			<p>@Model.Value("aboutSignature")</p>
 		</div>
 		<div class="right-side">
+            <form action="" novalidate>
+                <div class="headline bg-primary">
+                    <h3>Request a call back</h3>
+                </div>
+                <div class="request-inputs">
+                    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                    <input placeholder="Name">
+                    <input placeholder="Email address">
+                    <input placeholder="Phone">
+                    <input placeholder="Financial consulting">
+                    <button class="btn-gray">Submit</button>
+                </div>
+            </form>
 		</div>
 	</div>
 </section>
@@ -89,6 +105,7 @@
 
 <section id="story-section">
     <div class="container">
+        <img id="dot-image" src="@storyBackgroundDotImage" alt="">
         <div class="content">
             <h2>@Model.Value("storyHeadline")</h2>
             <p>@Model.Value("storyText")</p>
@@ -100,6 +117,7 @@
 
 <section id="success-section" class="bg-primary">
     <div class="container">
+        <img id="dot-image2" src="@successDotbackgroundImg">
         <div class="content">
             <h6>@Model.Value("successSectionTitle")</h6>
             <h2>@Model.Value("successHeadline")</h2>
@@ -134,29 +152,57 @@
         <div class="recent-box">
             <img src="@recentBoxOneImg" alt="">
             <div class="recent-text">
-                <h5>@Model.Value("recentBoxOneH5")</h5>
-                <p>@Model.Value("recentBoxOneText")</p>
+                <a href="/projects/annual-report-for-juva-inc/">
+                    <div class="txt">
+                        <h5>@Model.Value("recentBoxOneH5")</h5>
+                        <p>@Model.Value("recentBoxOneText")</p>
+                    </div>
+                    <div class="icn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="recent-box">
             <img src="@recentBoxTwoImage" alt="">
             <div class="recent-text">
-                <h5>@Model.Value("recentBoxTwoh5")</h5>
-                <p>@Model.Value("recentBoxTwoText")</p>
+                <a href="/projects/business-insights-for-sp-group-inc/">
+                    <div class="txt">
+                        <h5>@Model.Value("recentBoxTwoh5")</h5>
+                        <p>@Model.Value("recentBoxTwoText")</p>
+                    </div>
+                    <div class="icn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="recent-box">
             <img src="@recentBoxThreeImg" alt="">
             <div class="recent-text">
-                <h5>@Model.Value("recentBoxThreeH5")</h5>
-                <p>@Model.Value("recentBoxThreeText")</p>
+                <a href="/projects/financial-advisors-to-irra-corp-inc/">
+                    <div class="txt">
+                        <h5>@Model.Value("recentBoxThreeH5")</h5>
+                        <p>@Model.Value("recentBoxThreeText")</p>
+                    </div>
+                    <div class="icn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="recent-box">
             <img src="@recentBoxFourImg" alt="">
             <div class="recent-text">
-                <h5>@Model.Value("recentBoxFourH5")</h5>
-                <p>@Model.Value("recentBoxFourText")</p>
+                <a href="/projects/budget-planning-for-buccura-inc/">
+                    <div class="txt">
+                        <h5>@Model.Value("recentBoxFourH5")</h5>
+                        <p>@Model.Value("recentBoxFourText")</p>
+                    </div>
+                    <div class="icn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

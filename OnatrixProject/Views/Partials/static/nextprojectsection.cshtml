@@ -1,6 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@inject IPublishedUrlProvider PublishedUrlProvider
 @{
     var rootContents = UmbracoHelper.ContentAtRoot();
     var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
@@ -9,13 +11,19 @@
     var officeEmailAddress = settings?.Value<string>("officeEmailAddress") ?? "";
         
     var manImage = settings?.Value<IPublishedContent>("nextProjectImage")?.Url() ?? "";
+    var nextProjectDots = settings?.Value<IPublishedContent>("nextProjectDots")?.Url() ?? "";
+    var nextProjectBackground = settings?.Value<IPublishedContent>("nextProjectBackground")?.Url() ?? "";
+
+    var isContactPage = Model.Url(PublishedUrlProvider) == "/contact/";
 }
 
 
-<section id="let-us-know-next-project">
+<section id="let-us-know-next-project" class="@(isContactPage ? "bg-light" : "bg-gray")">
     <div class="container">
         <div class="guy-special-img">
             <img id="guy" src="@manImage" alt="">
+            <img id="corners" src="@nextProjectBackground" alt="">
+            <img id="dots" src="@nextProjectDots" alt="">
         </div>
         <div class="information">
             <h2>Let us know about<br> your next project</h2>

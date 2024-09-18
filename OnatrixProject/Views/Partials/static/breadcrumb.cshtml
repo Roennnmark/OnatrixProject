@@ -16,16 +16,16 @@
 
         @if (selection?.Length > 0) 
         {
-        <ul class="breadcrumb">
+        <div class="breadcrumb">
             @foreach (var item in selection.OrderBy(x => x.Level))
             {
                 var displayName = isFirstItem ? homePageDisplayName : item.Name;
-                <li><a href="@item.Url(PublishedUrlProvider)">@displayName ></a></li>
+                <a href="@item.Url(PublishedUrlProvider)">@displayName ></a>
                 isFirstItem = false;
             }
 
-            <li class="active" style="color: #D9C3A9;">@Model.Name</li>
-        </ul>
+            <a class="active" style="color: #D9C3A9;">@Model.Name</a>
+        </div>
         }
     </div>
 </section>

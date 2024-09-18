@@ -164,9 +164,15 @@ h6 {
   margin-top: 10px;
 }
 #top-bar .container .social-links a {
-  margin-left: 7px;
+  margin-left: 12px;
+  color: #FFFFFF;
 }
-
+#top-bar .container .social-links a:hover {
+  color: #D9C3A9;
+}
+#top-bar .container .social-links a[target=_blank]::after {
+  content: none;
+}
 header .container {
   display: flex;
   justify-content: space-between;
@@ -208,11 +214,46 @@ header .container .search button {
 
 #about-section {
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 #about-section .container {
   display: grid;
-  grid-template-columns: 4fr 3fr;
+  grid-template-columns: 7fr 4fr;
+  gap: 20px;
+}
+#about-section .container .left-side .quote {
+  font-size: 20px;
+}
+#about-section .container .right-side {
+  position: relative;
+  z-index: 10;
+  margin-top: -150px;
+}
+#about-section .container .right-side form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#about-section .container .right-side form .headline {
+  padding: 20px;
+}
+#about-section .container .right-side form .request-inputs {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+#about-section .container .right-side form .request-inputs p {
+  font-size: 13px;
+}
+#about-section .container .right-side form .request-inputs input {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #F7F7F7;
+  padding: 15px 40px;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none !important;
+  background-color: transparent;
 }
 
 #services-section {
@@ -229,13 +270,17 @@ header .container .search button {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
-#services-section .container .articles .box {
+#services-section .container .articles a:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+#services-section .container .articles a .box {
   border-color: 1px solid #F7F7F7;
 }
-#services-section .container .articles .box h5 {
+#services-section .container .articles a .box h5 {
   padding: 20px;
 }
-#services-section .container .articles .box p {
+#services-section .container .articles a .box p {
   padding: 20px;
 }
 
@@ -303,6 +348,8 @@ footer .container {
   position: relative;
 }
 #recent-section .recent-articles .recent-box .recent-text {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
   background-color: #424946;
   opacity: 0.8;
   position: absolute;
@@ -312,19 +359,34 @@ footer .container {
   padding: 20px;
   width: 100%;
 }
+#recent-section .recent-articles .recent-box .recent-text a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 #recent-section .recent-articles .recent-box .recent-text h5 {
   color: #FFFFFF;
 }
 #recent-section .recent-articles .recent-box .recent-text p {
   color: #FFFFFF;
 }
+#recent-section .recent-articles .recent-box .recent-text i {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #FFFFFF;
+  font-size: 50px;
+}
 #recent-section .recent-articles .recent-box .recent-text:hover {
   cursor: pointer;
   opacity: 1;
-  padding: 40px;
+  padding: 30px;
 }
 #recent-section .recent-articles .recent-box .recent-text:hover h5 {
   color: #D9C3A9;
+}
+#recent-section .recent-articles .recent-box .recent-text:hover i {
+  opacity: 1;
 }
 
 #company-section .container {
@@ -372,6 +434,12 @@ footer .container {
   padding-top: 50px;
   margin-left: 350px;
 }
+#second-section .container .left-side .big-quote {
+  font-size: 20px;
+}
+#second-section .container .left-side img {
+  padding-bottom: 15px;
+}
 #second-section #boy-img {
   width: 100%;
 }
@@ -402,7 +470,7 @@ footer .container {
 
 #let-us-know-next-project {
   padding-bottom: 223px;
-  background-color: #f7f7f7;
+  
   padding-top: 50px;
 }
 #let-us-know-next-project .container {
@@ -427,6 +495,16 @@ footer .container {
 #let-us-know-next-project .container .information {
   padding-top: 100px;
   padding-left: 60px;
+}
+#let-us-know-next-project .container .information h6 {
+  color: #4F5955;
+}
+#let-us-know-next-project .container .information h6 i {
+  color: #D9C3A9;
+  padding-right: 10px;
+}
+#let-us-know-next-project .container .information p {
+  padding-left: 24px;
 }
 
 #single-page-service {
@@ -563,12 +641,66 @@ footer .container {
   color: #FFFFFF;
 }
 
+#have-a-question {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+#have-a-question .container form .question-headline h3 {
+  font-size: 25px;
+  color: #4F5955;
+}
+#have-a-question .container form .question-inputs {
+  display: grid;
+  grid-template-areas: "name email" "question question";
+  gap: 20px;
+}
+#have-a-question .container form .question-inputs .name-input {
+  grid-area: name;
+}
+#have-a-question .container form .question-inputs .email-input {
+  grid-area: email;
+}
+#have-a-question .container form .question-inputs .q-input {
+  grid-area: question;
+  height: 200px;
+  vertical-align: top;
+}
+#have-a-question .container form .question-inputs textarea {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #F7F7F7;
+  padding: 15px 40px;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none !important;
+  background-color: transparent;
+  resize: none;
+}
+#have-a-question .container form .question-inputs input {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #F7F7F7;
+  padding: 15px 40px;
+  font-size: 16px;
+  transition: 0.25s;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+#have-a-question .container form .btn-primary {
+  margin-top: 20px;
+}
+#contact-form {
+  padding-bottom: 40px;
+}
 #contact-form #contact-map {
-  position: absolute;
-  z-index: -2;
+  position: relative;
+  z-index: 1;
 }
 #contact-form .container {
   position: relative;
+  
 }
 #contact-form .container .content {
   background-color: #FFFFFF;
@@ -576,9 +708,11 @@ footer .container {
   display: block;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  margin-top: 300px;
+  position: relative;
+  z-index: 2;
+  margin-top: -400px;
   border: 1px solid #F7F7F7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #contact-form .container .content .headline-texts {
   text-align: center;
