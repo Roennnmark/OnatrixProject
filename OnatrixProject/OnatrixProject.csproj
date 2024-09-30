@@ -4,6 +4,66 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\dxhdmqi3\logo-onatrix.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\00thavt4\aboutusgirl.svg" />
+    <Content Include="wwwroot\media\1fih4b0y\project-financialadvisors.svg" />
+    <Content Include="wwwroot\media\21tdw3hp\onatrix-logo.svg" />
+    <Content Include="wwwroot\media\2lbdazov\5corner-bg-for-let-us-know-next-project.svg" />
+    <Content Include="wwwroot\media\40qbpo2m\company2.svg" />
+    <Content Include="wwwroot\media\4qacokwd\expert-miranda.svg" />
+    <Content Include="wwwroot\media\5ywhbr5r\dot-map.svg" />
+    <Content Include="wwwroot\media\a40p0jx5\company6.svg" />
+    <Content Include="wwwroot\media\astbblun\sl-home2.svg" />
+    <Content Include="wwwroot\media\be3fucjv\expert-brandon-kerr.svg" />
+    <Content Include="wwwroot\media\bumdik5u\riskmanagement1.svg" />
+    <Content Include="wwwroot\media\ciffe1jd\article-img3.svg" />
+    <Content Include="wwwroot\media\cs3hzyii\company3.svg" />
+    <Content Include="wwwroot\media\dctf5nvp\onatrix-logo.svg" />
+    <Content Include="wwwroot\media\drubxxql\project-businessinsights.svg" />
+    <Content Include="wwwroot\media\dwchhout\single-project-page2.svg" />
+    <Content Include="wwwroot\media\edrdkyyx\article-img5.svg" />
+    <Content Include="wwwroot\media\eejiqakz\how-can-we-help-img.svg" />
+    <Content Include="wwwroot\media\enjgh3hg\sl-home2.svg" />
+    <Content Include="wwwroot\media\eotnhv0n\article-img1.svg" />
+    <Content Include="wwwroot\media\eyfplikt\article-img4.svg" />
+    <Content Include="wwwroot\media\f1aahoay\onatrix-logo.svg" />
+    <Content Include="wwwroot\media\fjdafpsa\expert-brandon.svg" />
+    <Content Include="wwwroot\media\ghmfsihz\project-annualreport.svg" />
+    <Content Include="wwwroot\media\greft4f5\dots-for-let-us-know-next-project.svg" />
+    <Content Include="wwwroot\media\h4lisarz\contact-map.svg" />
+    <Content Include="wwwroot\media\hc0e3ssu\expert-kevin.svg" />
+    <Content Include="wwwroot\media\iqgktxyk\groupimage.svg" />
+    <Content Include="wwwroot\media\iyxoqvqc\riskmanagement2.svg" />
+    <Content Include="wwwroot\media\j3qmbrrr\single-project-page1.svg" />
+    <Content Include="wwwroot\media\jvpf5ntr\recentimg2.svg" />
+    <Content Include="wwwroot\media\jzhpgeq2\dot-map.svg" />
+    <Content Include="wwwroot\media\kjpc0xkl\company1.svg" />
+    <Content Include="wwwroot\media\lz4npkk5\single-project-page3.svg" />
+    <Content Include="wwwroot\media\nuzdow4h\dot-map2.svg" />
+    <Content Include="wwwroot\media\ojuiucxc\expert-aaron.svg" />
+    <Content Include="wwwroot\media\oripqtgi\expert-aj.svg" />
+    <Content Include="wwwroot\media\oycpmi4q\signature.svg" />
+    <Content Include="wwwroot\media\pxgg5j0j\recentimg4.svg" />
+    <Content Include="wwwroot\media\qatja3ga\5corner-bg-for-let-us-know-next-project.svg" />
+    <Content Include="wwwroot\media\s11afwei\recentimg1.svg" />
+    <Content Include="wwwroot\media\svshrty0\recentimg3.svg" />
+    <Content Include="wwwroot\media\tzuouhy3\sl-home2.svg" />
+    <Content Include="wwwroot\media\u0hdyoaf\expert-tina.svg" />
+    <Content Include="wwwroot\media\upikplrp\aboutusboy.svg" />
+    <Content Include="wwwroot\media\uuulso4g\dots-for-let-us-know-next-project.svg" />
+    <Content Include="wwwroot\media\v2nhbr1a\article-img6.svg" />
+    <Content Include="wwwroot\media\vfrh45r5\let-us-know-next-project-guy.svg" />
+    <Content Include="wwwroot\media\vi5ba4kr\dot-map2.svg" />
+    <Content Include="wwwroot\media\vysffd33\successtory.svg" />
+    <Content Include="wwwroot\media\wj1b0e5f\company4.svg" />
+    <Content Include="wwwroot\media\wwddkufd\stars.svg" />
+    <Content Include="wwwroot\media\x2npzxzu\project-budgetplanning.svg" />
+    <Content Include="wwwroot\media\ykdjihm3\article-img2.svg" />
+    <Content Include="wwwroot\media\zduh0djr\company5.svg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="14.2.0" />
